@@ -1,4 +1,3 @@
-
 s1 = str()
 # in python `''` or `""` is the same
 s2 = "shaunwei" # 'shaunwei'
