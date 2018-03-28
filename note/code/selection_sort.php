@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * 选择排序
+ */
 function findSmallest($arr)
 {
     $smallest = $arr[0];

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * 二分查找
+ */
 function binarySearch($needle, $array)
 {
     $low = 0;
