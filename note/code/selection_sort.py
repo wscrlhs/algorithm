@@ -1,4 +1,4 @@
-def findSmartlest(arr):
+def findSmallest(arr):
     smallest = arr[0]
     smallest_index = 0
     for i in range(1, len(arr)):
@@ -11,7 +11,7 @@ def findSmartlest(arr):
 def selectionSort(arr):
     newArr = []
     for i in range(len(arr)):
-        smallest = findSmartlest(arr)
+        smallest = findSmallest(arr)
         newArr.append(arr.pop(smallest))
     return newArr
 
