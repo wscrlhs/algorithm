@@ -23,4 +23,34 @@ $parents["fin"] = null;
 $processed = [];
 
 function findLowestCodeNode($costs){
+    $lowerCost = PHP_INT_MAX;
+    $lowerCostNode = null;
+    global $processed;
+    foreach($costs as $node => $cost){
+        if($cost< $lowerCost && !array_key_exists($node, $processed)){
+            $lowerCost = $cost;
+            $lowerCostNode = $node;
+        }
+    }
+    return $lowerCostNode;
+}
 
+$node = findLowestCodeNode($costs);
+
+while($node) {
+    $cost = $costs[$node];
+    $neighbors = $graph[$node];
+    foreach(array_keys($neighbors) as $n){
+        $newCost = $cost+$neighbors[$n];
+        if ($costs[$n] > $newCost){
+            $costs[$n] = $newCost;
+            $parents[$n] = $node;
+        }
+    }
+    $processed[$node] = true;
+    $node = findLowestCodeNode($costs);
+}
+
+
+print("Cost from the start to each node:");
+var_dump($costs);
